@@ -1,0 +1,6 @@
+#+TITLE: Learning the PyTorch Library
+My personal notes and code for learning PyTorch
+* Why PyTorch?
+Because TF installation in any envirnoment other than Ubuntu sucks. 
+* Resources
+**  
