@@ -1,0 +1,47 @@
+from future import print_function, division
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.optim import lr_scheduler
+from torch.autograd import Variable
+import numpy as np
+import torchvision
+from torchvision import datasets, models, transforms
+import matplotlib.pyplot as plt
+import time
+import os
+import copy
+
+
+def imshow(inp, title=None):
+    inp = inp.numpy().transpose((1, 2, 0))
+    # plt.figure(figsize=(10, 10))
+    plt.axis('off')
+    plt.imshow(inp)
+    if title is not None:
+        plt.title(title)
+    plt.pause(0.001)
+
+def show_databatch(inputs, classes):
+    out = torchvision.utils.make_grid(inputs)
+    imshow(out, title=[class_names[x] for x in classes])
+
+# Get a batch of training data
+inputs, classes = next(iter(dataloaders[TRAIN]))
+show_databatch(inputs, classes)
+
+data_dir = '/home/alkhaldieid/repos/datasets/iciar/dataset'
+TRAIN = 'train'
+VAL = 'validation'
+TEST = 'test'
+
+def main():
+    plt.ion()
+
+    use_gpu = torch.cuda.is_available()
+    if use_gpu:
+        print("Using CUDA")
+
+if __name__ == '__main__':
+    main()
+    print("done")
